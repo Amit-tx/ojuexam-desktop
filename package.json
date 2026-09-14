@@ -1,0 +1,35 @@
+{
+  "name": "ojuexam-desktop",
+  "version": "1.1.1",
+  "description": "OJUExam - Secure Online Examination Desktop App",
+  "main": "main.js",
+  "author": "OJU Institution",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build-win": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.ojuexam.desktop",
+    "productName": "OJUExam",
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": true,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "createDesktopShortcut": true,
+      "shortcutName": "OJUExam",
+      "artifactName": "OJUExam-Setup-${version}.${ext}"
+    },
+    "files": ["main.js", "preload.js", "package.json", "build/**"]
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
