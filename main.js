@@ -8,7 +8,7 @@ if (!lock) { app.quit(); }
 let mainWindow;
 let exitWindow = null;
 const EXIT_WORDS = ['quit', 'exit'];
-const APP_VERSION = '1.1.2';
+const APP_VERSION = '1.1.3';
 const APP_NAME = 'OJUExam';
 const APP_URL = 'https://ojuexam.online/login';
 let allowQuit = false;
